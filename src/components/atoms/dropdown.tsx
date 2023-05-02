@@ -1,14 +1,16 @@
-import { ChangeEventHandler } from 'react';
-
 interface DropdownProps {
-    value: string;
+    value?: string;
     options: string[];
-    onChange: ChangeEventHandler<HTMLSelectElement>;
+    onChange: (value: string) => void;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ value, options, onChange }) => {
+    const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        onChange(e.target.value);
+    };
+
     return (
-        <select value={value} onChange={onChange}>
+        <select value={value} onChange={handleSelect} className="p-2">
             {options.map((option) => (
                 <option key={option} value={option}>
                     {option}

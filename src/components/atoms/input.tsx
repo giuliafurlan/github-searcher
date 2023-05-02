@@ -1,17 +1,22 @@
-import { ChangeEventHandler } from 'react';
+import { ChangeEvent } from 'react';
 
 interface InputProps {
     value: string;
-    onChange: ChangeEventHandler<HTMLInputElement>;
+    onChange: (newValue: string) => void;
 }
 
 const Input: React.FC<InputProps> = ({ value, onChange }) => {
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        onChange(e.target.value);
+    };
+
     return (
         <input
             type="text"
             value={value}
-            onChange={onChange}
+            onChange={handleInputChange}
             placeholder="Start typing to search .."
+            className="p-2 w-80 text-sm"
         />
     );
 };
