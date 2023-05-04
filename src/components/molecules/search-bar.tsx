@@ -1,8 +1,9 @@
-import { SearchParams, SearchType } from '@/pages';
+import { SearchParams } from '@/types/search-params';
+import { SearchType } from '@/types/search-type';
 import { Dispatch, SetStateAction } from 'react';
 import Dropdown from '../atoms/dropdown';
 import Input from '../atoms/input';
-import Title from '../atoms/title';
+import Title from './title';
 
 export type DropdownOption = { label: string; value: SearchType };
 

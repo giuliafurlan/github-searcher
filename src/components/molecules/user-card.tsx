@@ -1,12 +1,11 @@
 import { User } from '@/types/user';
+import { fetcher } from '@/utils/api';
 import Image from 'next/image';
 import useSWR from 'swr';
 import Card from '../atoms/card';
 import Typography from '../atoms/typography';
 
 type UserCardProps = User;
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const UserCard: React.FC<UserCardProps> = ({ username, imageSrc }) => {
     const { data } = useSWR(

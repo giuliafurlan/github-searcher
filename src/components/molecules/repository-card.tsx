@@ -1,4 +1,5 @@
 import { Repository } from '@/types/repository';
+import { fetcher } from '@/utils/api';
 import moment from 'moment';
 import Image from 'next/image';
 import useSWR from 'swr';
@@ -9,8 +10,6 @@ import Card from '../atoms/card';
 import Typography from '../atoms/typography';
 
 type RepositoryCardProps = Repository;
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const RepositoryCard: React.FC<RepositoryCardProps> = ({
     name,

@@ -2,15 +2,9 @@ import SearchBar from '@/components/molecules/search-bar';
 import RepositorySearchResult from '@/components/templates/repository-search-result';
 import UserSearchResult from '@/components/templates/user-search-result';
 import { Repository } from '@/types/repository';
+import { SearchParams } from '@/types/search-params';
 import { User } from '@octokit/webhooks-types';
 import { useEffect, useState } from 'react';
-
-export type SearchType = 'users' | 'repository';
-
-export type SearchParams = {
-    searchText: string;
-    type: SearchType;
-};
 
 export default function Home() {
     const [data, setData] = useState<User[] | Repository[] | null>(null);

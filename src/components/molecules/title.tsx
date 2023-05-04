@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import githubMark from '../../assets/image/github-mark.svg';
-import Typography from './typography';
+import Typography from '../atoms/typography';
 
 const Title = () => {
     return (
