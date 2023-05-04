@@ -1,10 +1,10 @@
 import { Repository } from '@/types/repository';
-import { fetcher } from '@/utils/api';
 import moment from 'moment';
 import Image from 'next/image';
 import useSWR from 'swr';
-import repositoryIcon from '../../assets/image/github-mark.svg';
+import repositoryIcon from '../../assets/image/repository-icon.svg';
 import starIcon from '../../assets/image/star.svg';
+import { fetcher } from '../../utils/api';
 import Badge from '../atoms/badge';
 import Card from '../atoms/card';
 import Typography from '../atoms/typography';
