@@ -1,7 +1,7 @@
 import { User } from '@/types/user';
-import { fetcher } from '@/utils/api';
 import Image from 'next/image';
 import useSWR from 'swr';
+import { fetcher } from '../../utils/api';
 import Card from '../atoms/card';
 import Typography from '../atoms/typography';
 
