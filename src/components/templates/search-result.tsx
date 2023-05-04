@@ -5,7 +5,7 @@ interface Props {
 }
 
 const SearchResult: React.FC<Props> = ({ children }) => {
-    return <div className="grid grid-cols-3">{children}</div>;
+    return <div className="grid grid-cols-3 gap-x-8 mt-8">{children}</div>;
 };
 
 export default SearchResult;

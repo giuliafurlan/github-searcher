@@ -9,7 +9,7 @@ import { useState } from 'react';
 export default function Home() {
     const [params, setParams] = useState<SearchParams>({
         searchText: '',
-        type: 'repository',
+        type: 'users',
     });
 
     const { data } = useGithubApi(params);
