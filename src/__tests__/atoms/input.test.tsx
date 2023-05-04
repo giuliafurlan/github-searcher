@@ -1,4 +1,4 @@
-import Input from '@/components/atoms/Input';
+import Input from '@/components/atoms/input';
 import { fireEvent, render } from '@testing-library/react';
 
 describe('Input', () => {

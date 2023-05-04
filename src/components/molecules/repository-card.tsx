@@ -41,13 +41,16 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({
                     </Typography>
                     <div className="flex gap-1 flex-wrap">
                         {topics?.map((t) => (
-                            <Badge label={t} />
+                            <Badge label={t} key={t} />
                         ))}
                     </div>
 
                     <div className="text-slate-500 flex gap-2 items-center">
                         {data && (
-                            <div className="flex items-center">
+                            <div
+                                className="flex items-center"
+                                data-testid="followers"
+                            >
                                 <Image
                                     src={starIcon}
                                     alt="star icon"

@@ -5,7 +5,11 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ children }) => {
-    return <div className="flex gap-2 p-16">{children}</div>;
+    return (
+        <div className="flex gap-2 p-16" data-testid="card">
+            {children}
+        </div>
+    );
 };
 
 export default Card;
