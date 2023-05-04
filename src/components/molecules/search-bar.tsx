@@ -1,29 +1,43 @@
-import { useState } from 'react';
+import { SearchParams, SearchType } from '@/pages';
+import { Dispatch, SetStateAction } from 'react';
 import Dropdown from '../atoms/dropdown';
 import Input from '../atoms/input';
 import Title from '../atoms/title';
 
-const dropdownOptions = ['Users', 'Repository'];
+export type DropdownOption = { label: string; value: SearchType };
 
-const SearchBar = () => {
-    const [input, setInput] = useState('');
-    const [type, setType] = useState(dropdownOptions[0]);
+const dropdownOptions: DropdownOption[] = [
+    { label: 'Users', value: 'users' },
+    { label: 'Repository', value: 'repository' },
+];
 
+interface SearchBarProps {
+    params: SearchParams;
+    onChangeParams: Dispatch<SetStateAction<SearchParams>>;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ params, onChangeParams }) => {
     const handleInputChange = (newInput: string) => {
-        setInput(newInput);
+        onChangeParams((prevState: SearchParams) => ({
+            ...prevState,
+            searchText: newInput,
+        }));
     };
 
-    const handleTypeChange = (selectedEl: string) => {
-        setType(selectedEl);
+    const handleTypeChange = (selectedEl: SearchType) => {
+        onChangeParams({
+            searchText: '',
+            type: selectedEl,
+        });
     };
 
     return (
         <div className="grid gap-4">
             <Title />
             <div className="flex gap-4">
-                <Input value={input} onChange={handleInputChange} />
+                <Input value={params.searchText} onChange={handleInputChange} />
                 <Dropdown
-                    value={type}
+                    value={params.type}
                     options={dropdownOptions}
                     onChange={handleTypeChange}
                 />
