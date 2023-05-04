@@ -16,6 +16,6 @@ export const Default: Story = {
         description: 'test description',
         lastUpdate: '2022-01-01T00:00:00Z',
         topics: ['test-topic'],
-        owner: 'test-user',
+        followers: 7,
     },
 };
