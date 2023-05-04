@@ -1,7 +1,7 @@
 import React from 'react';
 
 type Weight = 'regular' | 'medium' | 'bold';
-type VariantName = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+type VariantName = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'p-sm';
 
 const getFontWeight = (weight?: Weight) =>
     weight === 'bold' ? '700' : weight === 'medium' ? '500' : '400';
@@ -64,6 +64,13 @@ const VARIANT_OBJECTS_LIST: Record<VariantName, VariantObject> = {
         style: {
             fontSize: 16,
             lineHeight: 20,
+        },
+    },
+    'p-sm': {
+        component: 'p',
+        style: {
+            fontSize: 12,
+            lineHeight: 14,
         },
     },
 };
