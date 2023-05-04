@@ -1,5 +1,7 @@
 import '@/styles/globals.css';
+import { ApolloProvider } from '@apollo/client';
 import type { AppProps } from 'next/app';
+import client from '../../apollo-client';
 
 import { Roboto } from 'next/font/google';
 
@@ -11,8 +13,10 @@ const roboto = Roboto({
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
-        <main className={`${roboto.variable} font-sans`}>
-            <Component {...pageProps} />
-        </main>
+        <ApolloProvider client={client}>
+            <main className={`${roboto.variable} font-sans`}>
+                <Component {...pageProps} />
+            </main>
+        </ApolloProvider>
     );
 }

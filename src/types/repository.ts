@@ -3,5 +3,5 @@ export interface Repository {
     description: string;
     lastUpdate: string;
     topics: string[];
-    owner: string;
+    followers: number;
 }

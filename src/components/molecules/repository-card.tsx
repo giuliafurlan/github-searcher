@@ -1,10 +1,8 @@
 import { Repository } from '@/types/repository';
 import moment from 'moment';
 import Image from 'next/image';
-import useSWR from 'swr';
 import repositoryIcon from '../../assets/image/repository-icon.svg';
 import starIcon from '../../assets/image/star.svg';
-import { fetcher } from '../../utils/api';
 import Badge from '../atoms/badge';
 import Card from '../atoms/card';
 import Typography from '../atoms/typography';
@@ -16,13 +14,8 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({
     description,
     lastUpdate,
     topics,
-    owner,
+    followers,
 }) => {
-    const { data } = useSWR(
-        name ? `https://api.github.com/users/${owner}/followers/` : null,
-        fetcher
-    );
-
     return (
         <Card>
             <>
@@ -46,7 +39,7 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({
                     </div>
 
                     <div className="text-slate-500 flex gap-2 items-center">
-                        {data && (
+                        {!!followers && (
                             <div
                                 className="flex items-center"
                                 data-testid="followers"
@@ -57,7 +50,7 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({
                                     width={16}
                                 />
                                 <Typography variantName="p-sm">
-                                    {data.length}
+                                    {followers}
                                 </Typography>
                             </div>
                         )}

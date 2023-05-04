@@ -1,17 +1,17 @@
 import { User } from '@/types/user';
 import Image from 'next/image';
-import useSWR from 'swr';
-import { fetcher } from '../../utils/api';
 import Card from '../atoms/card';
 import Typography from '../atoms/typography';
 
 type UserCardProps = User;
 
-const UserCard: React.FC<UserCardProps> = ({ username, imageSrc }) => {
-    const { data } = useSWR(
-        username ? `https://api.github.com/users/${username}` : null,
-        fetcher
-    );
+const UserCard: React.FC<UserCardProps> = ({
+    username,
+    imageSrc,
+    name,
+    bio,
+    location,
+}) => {
     return (
         <Card>
             <>
@@ -29,7 +29,7 @@ const UserCard: React.FC<UserCardProps> = ({ username, imageSrc }) => {
                             weight="bold"
                             textColor="blue"
                         >
-                            {data && data.name}
+                            {name}
                         </Typography>
                         <Typography
                             variantName="h4"
@@ -39,9 +39,9 @@ const UserCard: React.FC<UserCardProps> = ({ username, imageSrc }) => {
                             {username}
                         </Typography>
                     </div>
-                    <Typography variantName="p">{data && data.bio}</Typography>
+                    <Typography variantName="p">{bio}</Typography>
                     <Typography variantName="p-sm" textColor="grey">
-                        {data && data.location}
+                        {location}
                     </Typography>
                 </div>
             </>
