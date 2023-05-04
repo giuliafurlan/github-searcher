@@ -1,4 +1,4 @@
-import { SearchType } from '@/pages';
+import { SearchType } from '@/types/search-type';
 import { DropdownOption } from '../molecules/search-bar';
 
 interface DropdownProps {
