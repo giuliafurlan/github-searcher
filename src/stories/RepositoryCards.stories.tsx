@@ -24,7 +24,7 @@ export const Default: Story = {
                 name: 'test-repo2',
                 description: 'test description22',
                 lastUpdate: '2022-11-01T00:00:00Z',
-                topics: ['test-topic'],
+                topics: ['test-topic', 'another-topic', 'and-another-one'],
                 followers: 0,
             },
         ],

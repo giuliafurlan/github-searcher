@@ -86,6 +86,4 @@ The queries currently return only the first 30 elements, so implementing proper 
 
 Another valuable improvement would be to add Cypress to the project for end-to-end testing.
 
-Finally, it is important to note that the application is currently missing error handling for API call failures. This is a crucial feature that should be implemented in future iterations of the project.
-
 If time had allowed, I would have addressed all of the points mentioned above that are currently missing from the project.
