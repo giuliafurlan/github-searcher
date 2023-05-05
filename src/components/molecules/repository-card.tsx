@@ -32,7 +32,7 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({
                     <Typography variantName="p" className="truncate">
                         {description}
                     </Typography>
-                    <div className="flex gap-1 flex-wrap">
+                    <div className="flex gap-1 flex-wrap self-start">
                         {topics?.map((t) => (
                             <Badge label={t} key={t} />
                         ))}
