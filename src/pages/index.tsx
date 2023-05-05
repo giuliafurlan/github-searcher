@@ -12,7 +12,7 @@ export default function Home() {
         type: 'users',
     });
 
-    const { data } = useGithubApi(params);
+    const { data, loading } = useGithubApi(params);
 
     const ResultComponent =
         params.type === 'users' ? UserSearchResult : RepositorySearchResult;
@@ -22,7 +22,7 @@ export default function Home() {
             className={`flex min-h-screen flex-col items-center justify-center content-center p-24 `}
         >
             <SearchBar params={params} onChangeParams={setParams} />
-            {data && <ResultComponent data={data} />}
+            {data && !loading && <ResultComponent data={data} />}
         </main>
     );
 }

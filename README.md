@@ -82,9 +82,7 @@ I decided to use `apollo` as the library to query the API, `apollo` takes care o
 
 While I am satisfied with the current state of the project, there are several areas where it could be further improved. For example,
 
-I would like to implement a debounce function to improve user experience when typing. Although I had previously added this feature to my Rest API solution, I postponed it when I migrated to GraphQL.
-
-Additionally, the queries currently return only the first 30 elements, so implementing proper pagination would be the next logical step to improve the user experience.
+The queries currently return only the first 30 elements, so implementing proper pagination would be the next logical step to improve the user experience.
 
 Another valuable improvement would be to add Cypress to the project for end-to-end testing.
 
